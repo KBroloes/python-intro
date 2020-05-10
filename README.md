@@ -6,7 +6,7 @@ Welcome to the course. Together, we'll go through a small and fun project to lea
 
 **`board.py` is where you'll be implementing all your code.**
 
-`pip install -r requirements.txt` to install requirements
+`pip3 install -r requirements.txt` to install requirements
 
 `nosetests` to run the tests
 
