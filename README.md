@@ -6,6 +6,12 @@ Welcome to the course. Together, we'll go through a small and fun project to lea
 
 **`board.py` is where you'll be implementing all your code.**
 
+`pip install -r requirements.txt` to install requirements
+
+`nosetests` to run the tests
+
+`python3 game.py` to run the game using your current implementation from `board.py`
+
 # Description
 
 The course is in two segments: The module. and the web server.
