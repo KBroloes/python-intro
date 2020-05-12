@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<head>
+    <script src="/js/game.js"></script>
+
+    <style>
+        table.center {
+            margin-left:auto;
+            margin-right:auto;
+        }
+
+        button.center {
+            margin: 0 auto;
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+
+<h1 style="text-align: center;">TicTacPy Web Version</h1>
+
+
+
+<table id="game_board" class="center">
+    <tr>
+        <td id="TopLeft"></td>
+        <td id="Top"></td>
+        <td id="TopRight"></td>
+    </tr>
+    <tr>
+        <td id="Left"></td>
+        <td id="Center"></td>
+        <td id="Right"></td>
+    </tr>
+    <tr>
+        <td id="BottomLeft"></td>
+        <td id="Bottom"></td>
+        <td id="BottomRight"></td>
+    </tr>
+</table>
+
+<h1 id="win_banner" style="text-align: center;"></h1>
+<button id="create_new" onclick="create_game()" class="center">Start new game</button>
+</body>
+
+
+<footer></footer>

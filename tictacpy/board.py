@@ -21,7 +21,6 @@ class Board(BaseBoard):
         self.reset()
 
 
-
     def _get_display_value(self, value):
         if value is None:
             return ' '
@@ -138,3 +137,19 @@ class Board(BaseBoard):
         """
         with open(filename, 'rb') as f:
             return pickle.load(f)
+
+
+    def get_dict(self):
+        return dict({"state": self.state, "current_move": self.current_move})
+
+
+    @staticmethod
+    def load_from_dict(obj):
+        """ Loads the board from dictionary
+            Returns:
+                Board instance
+        """
+        board = Board()
+        board.state = obj["state"]
+        board.current_move = obj["current_move"]
+        return board
