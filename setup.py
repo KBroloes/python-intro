@@ -15,7 +15,7 @@ setup(
     long_description=readme,
     author='Kevin Broløs',
     author_email='kevin.broloes@abzu.ai',
-    url='https://github.com/KBroloes/python-intro', #/tictacpy for solution suggestions
+    url='https://github.com/KBroloes/python-intro',
     license=license,
     packages=find_packages(exclude=('tests'))
 )
