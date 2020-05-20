@@ -16,10 +16,11 @@ def index():
 def save_state(game, end_condition=None):
     """ Saves the game state in the session and return it again """
     ## Your code goes here:
-
+    session['game_state'] = dict()
 
     # Let's just return the state again here since we use it a lot
     return session['game_state']
+
 
 @app.route('/create')
 def create():
@@ -47,7 +48,8 @@ def get_board_from_state(game_state):
     """ Returns a board instance with the state initialized from the saved
         session dict. """
     # Your code goes here
-    return Board()
+    board = Board()
+    return board
 
 
 @app.route('/set_piece/<location>')
@@ -55,7 +57,7 @@ def set_piece(location):
     # First, check if you have a game in the session storage
 
     # Check if you have a game in session
-    if game_exists(session):
+    if not game_exists(session):
         return "Game not found", 404
 
     game_state = session['game_state']
@@ -68,10 +70,6 @@ def set_piece(location):
         return "Game has already ended", 400
 
     end_condition = None
-
-    # Check that the game hasn't already ended
-    if end_condition is not None:
-        return "Game has already ended", 400
 
     try:
         # We already know this stuff
@@ -91,6 +89,9 @@ def set_piece(location):
     # Pass in the end_condition in case it has changed so we can save it on the session
     # instead of doing the above check all the time
     web_friendly_state = save_state(game, end_condition)
+
+    # communicate who won to the client as well
+    web_friendly_state['end_condition'] = end_condition
 
     # If we just always return the state on success, the client doesn't need to make a new request to get the board
     return jsonify(web_friendly_state)
