@@ -71,6 +71,10 @@ Tictacpy contains a `board.py` and `base_board.py`. The Board class is used by `
 
 **`board.py` is where you'll be implementing all your code. So take some time to familiarize yourself with it, and the tests**
 
+## The Web Server
+
+The web server consists of two parts, the `app.py` and a folder called `static` with some simple javascript and html. The `app.py` has the basic game flow implemented using flask, and just requires you to implement the functions to get it working.
+
 # Testing
 
 We're using the builtin unittest framework of python, as well as the package `nose` to help us find and execute tests. After installing requirements, you can run `nosetests` to execute all the tests
